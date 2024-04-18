@@ -5,7 +5,7 @@ local actions = require "telescope.actions"
 local action_state = require "telescope.actions.state"
 
 local function get_session_lst()
-    local handle = io.popen("navigate --list")
+    local handle = io.popen("navi --list")
     if handle == nil then
       return {}
     end
@@ -32,7 +32,7 @@ local select_session = function(opts)
       actions.select_default:replace(function()
         actions.close(prompt_bufnr)
         local selection = action_state.get_selected_entry()
-        local handle = io.popen("navigate --select " .. selection[1])
+        local handle = io.popen("navi --select " .. selection[1])
         if handle == nil then
           return {}
         end
