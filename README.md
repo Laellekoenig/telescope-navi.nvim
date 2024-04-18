@@ -1,1 +1,1 @@
-# telescope-navigate.nvim
+# telescope-navi.nvim
